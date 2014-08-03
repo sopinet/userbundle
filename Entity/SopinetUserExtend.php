@@ -15,17 +15,17 @@ class SopinetUserExtend
      * @ORM\Column(type="integer")
      * @ORM\GeneratedValue(strategy="AUTO")
      */
-    protected $id;   
-    
+    protected $id;
+
     /**
      * @ORM\OneToOne(targetEntity="Application\Sonata\UserBundle\Entity\User", inversedBy="sopinetuserextend")
      * @ORM\JoinColumn(name="user_id", referencedColumnName="id", onDelete="CASCADE")
      */
     protected $user;
-    
+
     /** @ORM\Column(name="profilepicture", type="string", length=500, nullable=true) */
     protected $profilepicture;
-    
+
     /**
      * Set user
      *
@@ -35,11 +35,11 @@ class SopinetUserExtend
      */
     public function setUser(\Application\Sonata\UserBundle\Entity\User $user = null)
     {
-    	$this->user = $user;
-    
-    	return $this;
+        $this->user = $user;
+
+        return $this;
     }
-    
+
     /**
      * Get user
      *
@@ -47,19 +47,20 @@ class SopinetUserExtend
      */
     public function getUser()
     {
-    	return $this->user;
-    }    
-    
+        return $this->user;
+    }
+
     /**
      * Set profilepicture
      *
-     * @param string $profilepicture
+     * @param  string $profilepicture
      * @return User
      */
     public function setProfilePicture($profilepicture)
     {
-    	$this->profilepicture = $profilepicture;
-    	return $this;
+        $this->profilepicture = $profilepicture;
+
+        return $this;
     }
     /**
      * Get profilepicture
@@ -68,6 +69,6 @@ class SopinetUserExtend
      */
     public function getProfilePicture()
     {
-    	return $this->profilepicture;
-    }    
+        return $this->profilepicture;
+    }
 }
